@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Círculo: Laberinto Sin Salida</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <!-- Pantalla de Inicio -->
+        <div id="start-screen" class="screen active">
+            <div class="logo-circle">⚠️</div>
+            <h1>EL CÍRCULO</h1>
+            <p class="subtitle">Simulador Realista de Adicción y Dependencia</p>
+            <div class="intro-box">
+                <p><strong>Regla de la dinámica:</strong> Las decisiones cotidianas te arrastrarán al consumo. Intentar salir activará el síndrome de abstinencia y la presión social. ¿Sobrevivirás al laberinto?</p>
+            </div>
+            <button id="start-btn" class="btn primary">Entrar al Sistema</button>
+        </div>
+
+        <!-- Pantalla Principal de Juego -->
+        <div id="game-screen" class="screen">
+            <div class="stats-panel">
+                <div class="stat-item">
+                    <span class="stat-label">🧠 Claridad Mental</span>
+                    <div class="bar-container"><div id="bar-mind" class="bar" style="width: 100%;"></div></div>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">👥 Red de Apoyo</span>
+                    <div class="bar-container"><div id="bar-social" class="bar" style="width: 100%;"></div></div>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">🧬 Salud Biológica</span>
+                    <div class="bar-container"><div id="bar-bio" class="bar" style="width: 100%;"></div></div>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">⚡ Estabilidad Psicológica</span>
+                    <div class="bar-container"><div id="bar-psy" class="bar" style="width: 100%;"></div></div>
+                </div>
+            </div>
+
+            <div class="addiction-meter">
+                <span>Nivel de Dependencia en el Círculo: <strong id="addiction-level">0%</strong></span>
+            </div>
+
+            <div class="scenario-box">
+                <div id="phase-indicator" class="phase-badge">Fase: La Caída Inevitable</div>
+                <h2 id="scenario-title">Cargando...</h2>
+                <p id="scenario-text">Cargando escenario...</p>
+            </div>
+
+            <div id="choices-container" class="choices-box"></div>
+        </div>
+
+        <!-- Pantalla de Final -->
+        <div id="end-screen" class="screen">
+            <div id="end-icon" class="logo-circle">🛑</div>
+            <h1 id="end-title">Fin del Camino</h1>
+            <div class="intro-box">
+                <p id="end-message">Mensaje final...</p>
+            </div>
+            <button id="restart-btn" class="btn primary">Volver a Intentarlo</button>
+        </div>
+    </div>
+
+    <!-- Carga de Niveles por separado y luego el motor -->
+    <script src="level1.js"></script>
+    <script src="level2.js"></script>
+    <script src="level3.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
